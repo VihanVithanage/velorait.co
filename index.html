@@ -3,50 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Velora IT | Managed IT & MSP Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Velora IT | Enterprise Managed IT, Web Dev & RPA Automation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; scroll-behavior: smooth; }
-body { background:#f5f7fa; color:#1a1a1a; line-height:1.6; overflow-x: hidden; }
+body { background:#f8fafc; color:#1e293b; line-height:1.6; overflow-x: hidden; }
 
-/* Smooth Sticky Navbar with Blur Effect */
+/* Sticky Frosted-Glass Navbar */
 nav {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 40px;
+    padding:18px 5%;
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow:0 2px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.03);
     position:sticky;
     top:0;
     z-index:1000;
-    transition: all 0.3s ease;
 }
 
 nav img {
-    height:50px;
+    height:45px;
     transition: transform 0.3s ease;
 }
-nav img:hover {
-    transform: scale(1.05);
-}
+nav img:hover { transform: scale(1.05); }
 
-nav a {
+nav .nav-links a {
     text-decoration:none;
     color:#0a192f;
     font-weight:600;
-    margin-left:25px;
+    margin-left:30px;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
+    font-size: 15px;
     transition: color 0.3s ease;
 }
-
-/* Link sliding underline effect */
-nav a::after {
+nav .nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -56,20 +52,16 @@ nav a::after {
     background-color: #00c2a8;
     transition: width 0.3s ease;
 }
-nav a:hover::after {
-    width: 100%;
-}
-nav a:hover {
-    color: #00c2a8;
-}
+nav .nav-links a:hover::after { width: 100%; }
+nav .nav-links a:hover { color: #00c2a8; }
 
-/* Hero Section with Dynamic Gradient & Moving Shapes */
+/* High-Tech Dynamic Hero Section */
 header {
-    background: linear-gradient(135deg, #0a192f, #112240, #0a192f);
+    background: linear-gradient(135deg, #0a192f, #112240, #071120);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 12s ease infinite;
     color:white;
-    padding:140px 20px;
+    padding:160px 20px;
     text-align:center;
     position: relative;
     overflow: hidden;
@@ -81,55 +73,59 @@ header {
     100% { background-position: 0% 50%; }
 }
 
-/* Decorative subtle glow circles like Olee.ai */
-header::before, header::after {
+header::before {
     content: '';
     position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 194, 168, 0.15) 0%, rgba(0,0,0,0) 70%);
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(0, 194, 168, 0.12) 0%, rgba(0,0,0,0) 70%);
     z-index: 1;
 }
-header::before {
-    width: 400px;
-    height: 400px;
-    top: -100px;
-    left: -100px;
+
+.hero-particles {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(rgba(0, 194, 168, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+    z-index: 1;
+    opacity: 0.6;
+    animation: shift 20s linear infinite;
 }
-header::after {
-    width: 500px;
-    height: 500px;
-    bottom: -150px;
-    right: -100px;
+@keyframes shift {
+    from { background-position: 0 0; }
+    to { background-position: 40px 40px; }
 }
 
-header h1, header p, header .btn {
-    position: relative;
-    z-index: 2;
-}
+header h1, header p, header .btn-container { position: relative; z-index: 2; }
 
 header h1 {
-    font-size:48px;
-    font-weight:700;
-    letter-spacing: -0.5px;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.2;
 }
-
 header p {
-    font-size:20px;
-    margin-top:15px;
-    opacity:0.9;
+    font-size: 20px;
+    margin-top: 20px;
+    opacity: 0.85;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Enhanced CTA Buttons with Ripple/Glow Effect */
 .btn {
     display:inline-block;
-    margin-top:30px;
-    padding:14px 32px;
+    padding:14px 36px;
     background:#00c2a8;
     color:white;
     text-decoration:none;
-    border-radius:30px; /* Rounded pill style like modern tech sites */
+    border-radius:30px;
     font-weight:600;
-    box-shadow: 0 4px 15px rgba(0, 194, 168, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 194, 168, 0.3);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .btn:hover { 
@@ -140,23 +136,30 @@ header p {
 
 section {
     padding:100px 20px;
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
 }
 
 .section-title {
     text-align:center;
-    font-size:34px;
-    margin-bottom:60px;
+    font-size:36px;
+    margin-bottom:15px;
     font-weight:700;
     color:#0a192f;
-    position: relative;
 }
-/* Title accent bar */
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 18px;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .section-title::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 60px;
     height: 3px;
     background: #00c2a8;
     margin: 15px auto 0 auto;
@@ -165,99 +168,217 @@ section {
 
 .services {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:30px;
 }
 
-/* Modernized Cards with Smooth Lifting & Hover border accent */
 .card {
     background:white;
-    padding:35px;
+    padding:40px 35px;
     border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.02);
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.02);
+    border: 1px solid rgba(10, 25, 47, 0.05);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    top: 0;
 }
 .card:hover { 
     transform: translateY(-10px); 
-    box-shadow: 0 20px 40px rgba(10, 25, 47, 0.08);
+    box-shadow: 0 20px 40px rgba(10, 25, 47, 0.07);
     border-color: rgba(0, 194, 168, 0.3);
 }
 
-.card h3 {
-    margin-bottom:15px;
-    color:#0a192f;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-.card:hover h3 {
+.card .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 194, 168, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #00c2a8;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
 }
 
-.about {
-    text-align:center;
-    max-width:800px;
-    margin:auto;
-    font-size:18px;
-    line-height: 1.8;
-}
+.card h3 { margin-bottom:15px; color:#0a192f; font-size: 21px; }
+.card p { color: #475569; font-size: 15px; }
 
-/* Contact section update */
+.why-velora-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+@media(max-width: 500px) { .why-velora-grid { grid-template-columns: 1fr; } }
+
+.why-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    border-left: 4px solid #00c2a8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+}
+.why-box h4 { font-size: 20px; color: #0a192f; margin-bottom: 12px; }
+.why-box p { color: #475569; font-size: 15px; }
+
+.contact-wrapper { padding: 0 20px 100px 20px; }
 .contact {
     text-align:center;
     background: linear-gradient(135deg, #0a192f, #112240);
     color:white;
-    padding:100px 20px;
-    border-radius: 24px; /* Curved section block */
-    margin: 0 auto 80px auto;
-    max-width: 1100px;
+    padding:90px 40px;
+    border-radius: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
     box-shadow: 0 20px 40px rgba(10, 25, 47, 0.15);
+    position: relative;
+    overflow: hidden;
 }
-.contact h2 { font-size: 32px; margin-bottom: 10px;}
-.contact p { opacity: 0.8; font-size: 18px; }
+.contact h2 { font-size: 36px; margin-bottom: 15px; }
+.contact p { opacity: 0.8; font-size: 18px; margin-bottom: 10px; }
 
 footer {
     text-align:center;
-    padding:30px;
+    padding:35px;
     background:#091426;
-    color:#aaa;
+    color:#94a3b8;
     font-size:14px;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Floating Action Button for Consultation */
-.floating-cta {
+/* --- NEW CHATBOT WIDGET STYLING --- */
+.chat-trigger {
     position: fixed;
     bottom: 30px;
     right: 30px;
     background: #00c2a8;
     color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    padding: 15px 25px;
+    border-radius: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(0, 194, 168, 0.4);
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(0, 194, 168, 0.4);
     z-index: 999;
-    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
     transition: all 0.3s ease;
-    font-size: 24px;
 }
-.floating-cta:hover {
-    transform: scale(1.1) rotate(5deg);
+.chat-trigger:hover {
+    transform: translateY(-5px);
     background: #00a58e;
 }
 
-/* Responsive fixes */
+.chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 360px;
+    height: 480px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(10, 25, 47, 0.15);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.chat-window.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chat-header {
+    background: #0a192f;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chat-header h3 { font-size: 16px; font-weight: 600; }
+.chat-header .close-btn { cursor: pointer; opacity: 0.8; font-size: 20px; }
+.chat-header .close-btn:hover { opacity: 1; }
+
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.msg { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
+.msg.bot { background: white; color: #1e293b; align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 2px; }
+.msg.user { background: #00c2a8; color: white; align-self: flex-end; border-top-right-radius: 2px; }
+
+/* Quick chips style suggestions */
+.chat-suggestions {
+    padding: 10px 20px;
+    background: #f8fafc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #e2e8f0;
+}
+.suggest-chip {
+    background: white;
+    border: 1px solid #00c2a8;
+    color: #00c2a8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.suggest-chip:hover {
+    background: #00c2a8;
+    color: white;
+}
+
+.chat-footer {
+    padding: 12px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 10px;
+    background: white;
+}
+.chat-footer input {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+.chat-footer input:focus { border-color: #00c2a8; }
+.chat-footer button {
+    background: #0a192f;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+.chat-footer button:hover { background: #00c2a8; }
+
 @media (max-width: 768px) {
-    nav { padding: 15px 20px; }
-    header { padding: 100px 20px; }
-    header h1 { font-size: 34px; }
-    section { padding: 60px 20px; }
-    .contact { margin: 0 20px 60px 20px; padding: 60px 20px; }
+    nav { padding: 15px 5%; }
+    header { padding: 120px 20px; }
+    header h1 { font-size: 36px; }
+    section { padding: 70px 20px; }
+    .chat-window { width: calc(100% - 40px); right: 20px; bottom: 90px; }
 }
 </style>
 </head>
@@ -266,79 +387,179 @@ footer {
 
 <nav>
     <img src="Velora_IT_Logo_PNG.png" alt="Velora IT Logo">
-    <div>
+    <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="#why-us">Why Velora IT</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
 <header>
-    <h1 data-aos="fade-down" data-aos-duration="1000">Enterprise-Grade IT Support for Modern Businesses</h1>
-    <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">Proactive Managed IT, Cloud Solutions & Cybersecurity</p>
-    <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
-        <a href="mailto:velorait.co@gmail.com" class="btn">Request Consultation</a>
+    <div class="hero-particles"></div>
+    <h1 data-aos="fade-down" data-aos-duration="1000">Next-Gen Technology Infrastructure & Business Automation</h1>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">We keep your operational scale secure, redundant, and smart under tier-one industry leadership.</p>
+    <div class="btn-container" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+        <a href="mailto:velorait.co@gmail.com" class="btn">Request Free Consultation</a>
     </div>
 </header>
 
 <section id="services">
-    <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+    <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Our Core Ecosystem</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Enterprise standard technical deployment configured meticulously for small and mid-market fast-moving business units.</p>
+    
     <div class="services">
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Managed IT Services</h3>
-            <p>24/7 monitoring, patch management, helpdesk support and proactive infrastructure management.</p>
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <div class="icon-wrapper">⚙️</div>
+            <h3>Managed IT Support</h3>
+            <p>Complete 24/7 endpoint telemetry monitoring, instant helpdesk support systems, centralized patch rollouts, and comprehensive IT ecosystem lifecycle management.</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div class="icon-wrapper">☁️</div>
             <h3>Cloud & Microsoft 365</h3>
-            <p>Cloud migrations, Microsoft 365 management, secure remote access and backup solutions.</p>
+            <p>Risk-free cloud architecture data migrations, expert configuration management, automated immutable backups, and highly secure centralized access rules.</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <h3>Cybersecurity</h3>
-            <p>Endpoint security, firewall management, email protection and compliance-focused security strategy.</p>
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <h3>🛡️ Cybersecurity</h3>
+            <p>Advanced zero-trust perimeter endpoint controls, comprehensive unified firewall oversight, email isolation protocols, and regulatory standard compliance structuring.</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="400">
-            <h3>IT Consulting</h3>
-            <p>Strategic IT roadmaps, infrastructure upgrades and scalable technology planning.</p>
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            <div class="icon-wrapper">💻</div>
+            <h3>Web Development</h3>
+            <p>Engineering premium, pixel-perfect, highly scalable corporate web applications optimized extensively for lightning-fast speeds, UX fluidity, and modern conversion frameworks.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+            <div class="icon-wrapper">🤖</div>
+            <h3>Simple RPA Automations</h3>
+            <p>Eliminate resource-heavy overhead by automating highly repetitive administrative tasks, data syncing pipelines, and custom API-driven workflows seamlessly.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+            <div class="icon-wrapper">📊</div>
+            <h3>Strategic IT Consulting</h3>
+            <p>Custom technology roadmaps, deep asset vulnerability audits, precise capacity expansion analysis, and capital-efficient structural upgrade engineering.</p>
         </div>
     </div>
 </section>
 
-<section id="about">
-    <h2 class="section-title" data-aos="fade-up">Why Velora IT?</h2>
-    <div class="about" data-aos="zoom-in-up" data-aos-duration="1000">
-        <p>
-        Velora IT delivers reliable, secure and scalable IT solutions tailored for small and mid-sized businesses.
-        We align technology with your business objectives — reducing downtime, strengthening security,
-        and enabling long-term growth.
-        </p>
+<section id="why-us" style="background: rgba(10, 25, 47, 0.02); border-radius: 32px; padding: 80px 40px;">
+    <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Why Modern Ventures Rely on Velora IT</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Aligning ironclad defensive protocols with smart system integrations engineered natively to catalyze long-term operational scale.</p>
+    
+    <div class="why-velora-grid">
+        <div class="why-box" data-aos="fade-right" data-aos-duration="900">
+            <h4>Certified IT Professionals</h4>
+            <p>Your business environment isn't handled by tier-1 beginners. Our engineers maintain elite credentials across industry standards (including Microsoft, Cisco, and CompTIA security suites) to ensure deep problem isolation accuracy.</p>
+        </div>
+        <div class="why-box" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
+            <h4>Industrial Standard Leadership</h4>
+            <p>Guided by enterprise-tested engineering executives, our deployment strategies strictly reflect established regulatory frame controls. We execute system upgrades intentionally to mitigate system downtime effectively.</p>
+        </div>
+        <div class="why-box" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
+            <h4>Secure & Resilient Infrastructure</h4>
+            <p>Security isn't a bolt-on feature; it is built into everything we design. We protect your company with multi-layered digital backup loops and isolated network paths to prevent ransomware risks completely.</p>
+        </div>
+        <div class="why-box" data-aos="fade-left" data-aos-duration="900" data-aos-delay="250">
+            <h4>Proactive vs. Reactive Action</h4>
+            <p>We actively stop IT issues before they affect your team. Our continuous tracking code lets us fix software gaps, broken services, and hardware wear-and-tear before your staff can even notice a lag.</p>
+        </div>
     </div>
 </section>
 
-<section style="padding: 0 20px;">
-    <div id="contact" class="contact" data-aos="fade-up" data-aos-duration="1000">
-        <h2>Let’s Secure & Scale Your IT</h2>
-        <p>Email us at velorait.co@gmail.com</p>
-        <a href="mailto:velorait.co@gmail.com" class="btn">Contact Velora IT</a>
-    </div>
-</section>
+<div class="contact-wrapper">
+    <section id="contact" class="contact" data-aos="zoom-in" data-aos-duration="1000">
+        <h2>Let's Secure & Automate Your Business</h2>
+        <p>Get in touch directly at <strong>velorait.co@gmail.com</strong></p>
+        <p style="font-size: 14px; margin-bottom: 30px; opacity: 0.7;">Our senior infrastructure architects respond within 1 business hour.</p>
+        <a href="mailto:velorait.co@gmail.com" class="btn">Contact Velora IT Today</a>
+    </section>
+</div>
 
 <footer>
-    © 2026 Velora IT | Managed IT & MSP Services
+    © 2026 Velora IT | Premium Managed IT & Digital Automation Services. All Rights Reserved.
 </footer>
 
-<a href="mailto:velorait.co@gmail.com" class="floating-cta" title="Email Us">
-    ✉
-</a>
+<div class="chat-trigger" onclick="toggleChat()">
+    <span>Let's Chat</span> ✉
+</div>
+
+<div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+        <h3>Velora IT Assistant</h3>
+        <span class="close-btn" onclick="toggleChat()">×</span>
+    </div>
+    <div class="chat-body" id="chatBody">
+        <div class="msg bot">Hello! Thanks for reaching out to Velora IT. How can we help scale or protect your business infrastructure today?</div>
+    </div>
+    <div class="chat-suggestions">
+        <div class="suggest-chip" onclick="sendSuggestion('I need IT Support')">IT Support</div>
+        <div class="suggest-chip" onclick="sendSuggestion('Web Development services')">Web Dev</div>
+        <div class="suggest-chip" onclick="sendSuggestion('RPA & Automations')">RPA Automation</div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="Type your question here..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  // Initialize the scroll animation library with global settings
   AOS.init({
-      duration: 800, // Speed of animations (ms)
-      easing: 'ease-out-cubic', // Smooth acceleration curves
-      once: true, // Animation triggers only once when scrolling down
-      offset: 120 // Triggers animation slightly before element enters view
+      duration: 900,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100
   });
+
+  // --- BOT SCRIPTING INTERACTION ENGINE ---
+  const chatWindow = document.getElementById('chatWindow');
+  const chatBody = document.getElementById('chatBody');
+  const chatInput = document.getElementById('chatInput');
+
+  function toggleChat() {
+      chatWindow.classList.toggle('active');
+  }
+
+  function handleKeyPress(e) {
+      if (e.key === 'Enter') sendMessage();
+  }
+
+  function sendSuggestion(text) {
+      appendMessage(text, 'user');
+      generateBotResponse(text);
+  }
+
+  function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      appendMessage(text, 'user');
+      chatInput.value = '';
+      generateBotResponse(text);
+  }
+
+  function appendMessage(text, sender) {
+      const msgDiv = document.createElement('div');
+      msgDiv.classList.add('msg', sender);
+      msgDiv.innerText = text;
+      chatBody.appendChild(msgDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function generateBotResponse(userText) {
+      // Simulate typing speed response
+      setTimeout(() => {
+          let responseText = "Thank you for your message. Our certified IT experts are checking this. To map out a custom timeline or get immediate pricing configurations, please drop us a line at velorait.co@gmail.com!";
+          
+          const lowerText = userText.toLowerCase();
+          if (lowerText.includes('support') || lowerText.includes('it')) {
+              responseText = "Our managed IT support operates under certified leadership to keep systems running smoothly. Let's build a secure configuration roadmap! Email us details at velorait.co@gmail.com.";
+          } else if (lowerText.includes('web') || lowerText.includes('dev')) {
+              responseText = "We engineer modern, fast, custom web applications optimized for scale. Drop us an alignment email at velorait.co@gmail.com to check out our recent portfolio!";
+          } else if (lowerText.includes('rpa') || lowerText.includes('automat')) {
+              responseText = "Our simple RPA configurations eliminate heavy manual data entry pipelines. Let's see what workflows we can optimize for you! Connect at velorait.co@gmail.com.";
+          }
+          
+          appendMessage(responseText, 'bot');
+      }, 600);
+  }
 </script>
 
 </body>
